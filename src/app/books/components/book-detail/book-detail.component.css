@@ -1,0 +1,33 @@
+.book-detail-image {
+  height: auto;
+  object-fit: contain;
+}
+
+.btn-buy-link {
+  display: flex;
+  margin-bottom: 1rem;
+  max-width: 250px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.flex-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.desc {
+  margin: 0 4rem;
+}
+
+@media screen and (max-width: 429px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .desc {
+    margin: 2rem 0;
+  }
+}

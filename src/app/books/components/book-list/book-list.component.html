@@ -1,0 +1,9 @@
+<div class="grid-container">
+  <ng-container *ngFor="let book of books">
+    <app-book
+      [book]="book"
+      (handleBookDetails)="handleBookDetails($event)"
+      class="grid-item shadow-sm rounded"
+    ></app-book>
+  </ng-container>
+</div>

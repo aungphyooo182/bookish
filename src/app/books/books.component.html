@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="container" *ngIf="!apiError && !loading">
+  <app-category-detail [categoryDetail]="categoryDetail"></app-category-detail>
+  <app-book-list
+    [books]="books"
+    (outputBookDetailsHandler)="handleBookDetail($event)"
+  ></app-book-list>
+</div>
+
+<div class="container" *ngIf="apiError">
+  <h1 class="my-4" style="text-align: center">Sorry, API returns 404</h1>
+</div>
+
+<div class="container" *ngIf="!apiError && loading">
+  <app-category-detail-loading></app-category-detail-loading>
+</div>
+<app-footer></app-footer>

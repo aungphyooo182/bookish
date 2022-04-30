@@ -1,0 +1,15 @@
+<div class="card grid-content">
+  <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
+  <div class="card-body">
+    <h5 class="card-title">{{ category.display_name }}</h5>
+    <p class="card-text">{{ category.newest_published_date }}</p>
+    <p class="card-text">{{ category.oldest_published_date }}</p>
+    <p class="card-text">{{ category.updated }}</p>
+    <app-button
+      [class]="'btn btn-primary'"
+      [disabled]="false"
+      (click)="clickedSeeBooks(category.list_name_encoded)"
+      >See books</app-button
+    >
+  </div>
+</div>

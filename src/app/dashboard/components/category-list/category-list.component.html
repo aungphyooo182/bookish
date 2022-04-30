@@ -1,0 +1,12 @@
+<div class="container mb-4">
+  <h1 class="my-4">Available Categories</h1>
+  <div class="grid-container">
+    <ng-container *ngFor="let category of categories">
+      <app-category
+        [category]="category"
+        class="grid-item shadow-sm rounded"
+        (handleSeeBooks)="handleSeeBooks($event)"
+      ></app-category>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div class="container my-4">
+  <button class="btn btn-secondary my-2" (click)="back()">Back</button>
+  <div class="grid-container">
+    <img
+      class="book-detail-image"
+      [src]="book.book_image"
+      alt="book image cap"
+    />
+
+    <div class="desc mx-4">
+      <h5 class="book-title">{{ book.title }}</h5>
+      <p class="book-text">{{ book.description }}</p>
+      <p class="book-text">Author : {{ book.author }}</p>
+      <p class="book-text">Publisher : {{ book.publisher }}</p>
+      <p class="book-text">Pirce : {{ book.price }}</p>
+      <p class="book-text">Rank : {{ book.rank }}</p>
+      <p class="book-text">Rank last Week : {{ book.rank_last_week }}</p>
+      <p class="book-text">ISBN :</p>
+
+      <ng-container *ngFor="let isbn of book.isbns">
+        <span class="badge alert-info mx-1">{{ isbn.isbn10 }}</span>
+        <span class="badge alert-info">{{ isbn.isbn13 }}</span>
+      </ng-container>
+    </div>
+  </div>
+  <h3 class="book-text my-2">Buy Here</h3>
+  <div class="flex-box">
+    <ng-container *ngFor="let link of book.buy_links">
+      <a
+        class="btn btn-primary btn-buy-link mx-1"
+        [href]="link.url"
+        role="button"
+        >{{ link.name }}</a
+      >
+    </ng-container>
+  </div>
+</div>
+
+<app-footer></app-footer>

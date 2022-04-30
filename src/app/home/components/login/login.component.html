@@ -1,0 +1,57 @@
+<div class="login-container p-4">
+  <h1>Login</h1>
+  <form [formGroup]="form" (ngSubmit)="loginFormSubmit()" class="row g-3">
+    <div class="col-md-12">
+      <label for="id_email" class="form-label">Email address</label>
+      <input
+        formControlName="email"
+        [class.is-invalid]="
+          form.controls.email.touched && form.controls.email.invalid
+        "
+        type="email"
+        class="form-control"
+        id="id_email"
+      />
+      <div *ngIf="emailError && !accountError" class="d-block invalid-feedback">
+        Email incorrect.
+      </div>
+    </div>
+    <div class="col-md-12">
+      <label for="id_Password" class="form-label">Password</label>
+      <input
+        formControlName="password"
+        [class.is-invalid]="
+          form.controls.password.touched && form.controls.password.invalid
+        "
+        type="password"
+        class="form-control"
+        id="id_Password"
+      />
+      <div
+        *ngIf="passwordError && !accountError"
+        class="d-block invalid-feedback"
+      >
+        Password incorrect.
+      </div>
+    </div>
+    <div *ngIf="accountError" class="d-block invalid-feedback">
+      Your account doesn't exist. Please register first.
+    </div>
+    <div class="col-md-12 mt-4">
+      <app-button
+        [disabled]="form.invalid"
+        [type]="'submit'"
+        [class]="'btn btn-primary w-100'"
+        [loading]="btnLoading"
+      >
+        Login</app-button
+      >
+    </div>
+  </form>
+
+  <p class="pt-4">
+    If you have an account, please
+    <span class="signup-link" routerLink="/signup">sign up here</span>
+  </p>
+  <app-disclaimer type="login"></app-disclaimer>
+</div>
