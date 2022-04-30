@@ -1,0 +1,8 @@
+<button [disabled]="disabled || loading" [type]="type" [class]="class">
+  <ng-container *ngIf="!loading">
+    <ng-content></ng-content>
+  </ng-container>
+  <ng-container *ngIf="loading">
+    <span>{{ loadingText ? loadingText : "loading ..." }}</span>
+  </ng-container>
+</button>
