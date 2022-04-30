@@ -30,3 +30,10 @@
     grid-gap: 15px;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+  }
+}
