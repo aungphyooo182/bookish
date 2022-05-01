@@ -18,6 +18,19 @@ export class DashboardComponent implements OnInit {
   ) {}
   public _subscription: Subscription = new Subscription();
   public categories: Category[] = [];
+  public imageList = [
+    '../../assets/images/row-1-column-1.png',
+    '../../assets/images/row-1-column-2.png',
+    '../../assets/images/row-1-column-3.png',
+    '../../assets/images/row-1-column-4.png',
+    '../../assets/images/row-1-column-5.png',
+  ];
+  public loading = false;
+
+  public mutedCategories: Category[] = [];
+  public limit = 10;
+  public skip = 0;
+  public listFull = false;
   ngOnInit(): void {
     if (this.auth.isAuthenticated()) {
       console.log('authenticated');
@@ -28,12 +41,17 @@ export class DashboardComponent implements OnInit {
   }
 
   getCategories() {
+    this.loading = true;
     this._subscription = this.dashboardService.getCategories().subscribe(
       (res) => {
         console.log('categories', res);
         this.categories = res;
+        this.loading = false;
+        this.mutedCategories = this.categories.splice(this.skip, this.limit);
+        console.log(this.mutedCategories, this.skip, this.limit);
       },
       (error) => {
+        this.loading = false;
         console.log('error', error);
       }
     );
@@ -41,5 +59,16 @@ export class DashboardComponent implements OnInit {
 
   handleCategory(category: string) {
     this.router.navigateByUrl('/books/' + category);
+  }
+
+  handleLoadMore() {
+    //this should be done in api service but free api service is limited
+    if (this.skip < this.categories.length) {
+      this.skip += this.limit;
+      let array = this.categories.splice(this.skip, this.limit);
+      this.mutedCategories = [...this.mutedCategories, ...array];
+    } else {
+      this.listFull = true;
+    }
   }
 }

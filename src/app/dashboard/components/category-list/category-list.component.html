@@ -9,4 +9,12 @@
       ></app-category>
     </ng-container>
   </div>
+  <div class="flex-box my-2" *ngIf="!listFull">
+    <app-button
+      [disabled]="false"
+      class="btn btn-default"
+      (click)="clickedLoadMore()"
+      >Load more</app-button
+    >
+  </div>
 </div>

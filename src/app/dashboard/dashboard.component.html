@@ -1,6 +1,13 @@
 <app-header></app-header>
+<div class="container my-2">
+  <app-carousel [imageList]="imageList"></app-carousel>
+</div>
 <app-category-list
-  [categories]="categories"
+  *ngIf="!loading"
+  [categories]="mutedCategories"
+  [listFull]="listFull"
   (outputForCategory)="handleCategory($event)"
+  (outputForLoadMore)="handleLoadMore()"
 ></app-category-list>
+<app-category-loading *ngIf="loading"></app-category-loading>
 <app-footer></app-footer>

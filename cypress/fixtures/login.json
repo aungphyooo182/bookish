@@ -1,0 +1,11 @@
+{
+  "welcome": "Welcome from Bookish!",
+  "title": "Login",
+  "email": "Email address",
+  "mockEmail": "aungphyooo+bookish1"
+  "password": "Password",
+  "button": "Login",
+  "redirect": "If you have an account, please sign up here",
+  "disclaimer": "Disclaimer !",
+  "disclaimerDescription": "Login process does not use api service and it uses only local storeage!"
+}

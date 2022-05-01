@@ -1,9 +1,10 @@
+import { Observable } from 'rxjs';
 import { Category } from 'src/app/models/category';
 
 export class CategoryMapper {
   constructor() {}
 
-  public map(data: any): any {
+  public map(data: any): Observable<Category[]> {
     return data.map((item: any) => {
       let categoryModel: Category = {} as Category;
       categoryModel.display_name = item.display_name;

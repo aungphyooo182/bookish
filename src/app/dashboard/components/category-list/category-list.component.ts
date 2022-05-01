@@ -8,10 +8,17 @@ import { Category } from 'src/app/models/category';
 })
 export class CategoryListComponent implements OnInit {
   @Input() categories: Category[] = [];
+  @Input() listFull: boolean = false;
   @Output() outputForCategory = new EventEmitter();
+  @Output() outputForLoadMore = new EventEmitter();
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  clickedLoadMore() {
+    this.outputForLoadMore.emit();
+  }
 
   handleSeeBooks(category: string) {
     this.outputForCategory.emit(category);
