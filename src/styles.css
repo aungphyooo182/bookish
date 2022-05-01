@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 .bg-slate-200 {
   background-color: #e2e8f0;
 }
@@ -13,7 +14,20 @@
   background-color: #ffffff;
 }
 
+.bg-yellow {
+  background-color: #ecb22e;
+}
+
+.text-yellow {
+  color: #ffbb00;
+}
+
+.text-green {
+  color: #7ce3bc;
+}
+
 body {
-  background-color: #eaeded !important;
+  /* background-color: #eaeded !important; */
+  background-color: #dcf3ea !important; /*mac green*/
   /* background: #f9e0be !important; */
 }

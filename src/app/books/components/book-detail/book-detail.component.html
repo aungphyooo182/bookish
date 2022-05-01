@@ -19,8 +19,8 @@
       <p class="book-text">ISBN :</p>
 
       <ng-container *ngFor="let isbn of book.isbns">
-        <span class="badge alert-info mx-1">{{ isbn.isbn10 }}</span>
-        <span class="badge alert-info">{{ isbn.isbn13 }}</span>
+        <span class="badge alert-primary mx-1">{{ isbn.isbn10 }}</span>
+        <span class="badge alert-primary">{{ isbn.isbn13 }}</span>
       </ng-container>
     </div>
   </div>
@@ -28,7 +28,7 @@
   <div class="flex-box">
     <ng-container *ngFor="let link of book.buy_links">
       <a
-        class="btn btn-primary btn-buy-link mx-1"
+        class="btn btn-warning btn-buy-link mx-1"
         [href]="link.url"
         role="button"
         >{{ link.name }}</a

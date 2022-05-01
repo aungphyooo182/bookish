@@ -53,6 +53,7 @@ export class DashboardComponent implements OnInit {
       (error) => {
         this.loading = false;
         console.log('error', error);
+        this.loading = false;
       }
     );
   }

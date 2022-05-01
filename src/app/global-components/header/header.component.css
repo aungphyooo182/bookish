@@ -1,3 +1,9 @@
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show > .nav-link {
+  color: #ffbb00;
+}
+
 @media screen and (max-width: 1000px) {
   .navbar-nav .nav-link {
     padding-left: 1rem;

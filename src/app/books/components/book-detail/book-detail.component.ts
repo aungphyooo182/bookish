@@ -16,7 +16,7 @@ export class BookDetailComponent implements OnInit {
   public book: Book = {} as Book;
   ngOnInit(): void {
     this.book = this.sharedService.getBook();
-    if (!this.book.title) {
+    if (this.book.author === undefined) {
       this.location.back();
     }
   }

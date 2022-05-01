@@ -1,16 +1,28 @@
-import { TestBed } from '@angular/core/testing';
+import {
+  HttpTestingController,
+  HttpClientTestingModule,
+} from '@angular/common/http/testing';
+import { getTestBed, TestBed } from '@angular/core/testing';
 
 import { BookService } from './book.service';
 
 describe('BookService', () => {
+  let injector: TestBed;
   let service: BookService;
+  let httpMock: HttpTestingController;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(BookService);
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [BookService],
+    });
+
+    injector = getTestBed();
+    service = injector.get(BookService);
+    httpMock = injector.get(HttpTestingController);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  afterEach(() => {
+    httpMock.verify();
   });
 });

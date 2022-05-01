@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Category } from '@saleor/sdk/dist/apollo/types';
 import { Subscription } from 'rxjs';
 import { SharedService } from '../lib/shared.service';
 import { Book } from '../models/book';
@@ -42,13 +43,13 @@ export class BooksComponent implements OnInit {
     this._subscription = this.bookService
       .getBooksByCategory(category)
       .subscribe(
-        (data) => {
+        (data: any) => {
           console.log('data', data[0]);
           this.categoryDetail = data[0];
           this.books = this.categoryDetail.books;
           this.loading = false;
         },
-        (error) => {
+        (error: any) => {
           console.log('error', error);
           this.apiError = true;
           this.loading = false;

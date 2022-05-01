@@ -6,4 +6,21 @@
   /* color: #fff; */
   background-color: #fcfcfc;
   border-color: #b8c0ca;
+  font-family: Dosis;
+  background-color: #ffbb00;
+  color: #ffffff;
+}
+
+.btn-yellow:hover {
+  background-color: #ecb22e;
+}
+
+.btn-green {
+  font-family: Dosis;
+  background-color: #dcf3ea;
+  color: #000000;
+}
+
+.btn-green:hover {
+  background-color: #92bead;
 }
