@@ -2,21 +2,18 @@
   <img class="card-img-top" [src]="book.book_image" alt="Card image cap" />
 
   <div class="card-body">
-    <h5 class="card-title">{{ book.title }}</h5>
+    <h5 class="card-title text-green">{{ book.title }}</h5>
     <p class="card-text">{{ book.description }}</p>
     <p class="card-text">Author : {{ book.author }}</p>
     <p class="card-text">Publisher : {{ book.publisher }}</p>
     <p class="card-text">Pirce : {{ book.price }}</p>
-    <!-- <p class="card-text">Buy Here</p>
 
-    <ng-container *ngFor="let link of book.buy_links">
-      <a class="btn btn-primary btn-buy-link" [href]="link.url" role="button">{{
-        link.name
-      }}</a>
-    </ng-container> -->
-
-    <button class="btn btn-primary" (click)="clickedDetails(book)">
+    <app-button
+      [class]="'btn btn-green'"
+      [disabled]="false"
+      (click)="clickedDetails(book)"
+    >
       See Details
-    </button>
+    </app-button>
   </div>
 </div>

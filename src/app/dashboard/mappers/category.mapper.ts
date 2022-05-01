@@ -4,7 +4,7 @@ export class CategoryMapper {
   constructor() {}
 
   public map(data: any): any {
-    return data.map((item: any) => {
+    return data.map((item: Category) => {
       let categoryModel: Category = {} as Category;
       categoryModel.display_name = item.display_name;
       categoryModel.list_name = item.list_name;

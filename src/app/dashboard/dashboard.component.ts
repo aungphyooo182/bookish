@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit {
   ) {}
   public _subscription: Subscription = new Subscription();
   public categories: Category[] = [];
+  public loading = false;
   ngOnInit(): void {
     if (this.auth.isAuthenticated()) {
       console.log('authenticated');
@@ -28,13 +29,16 @@ export class DashboardComponent implements OnInit {
   }
 
   getCategories() {
+    this.loading = true;
     this._subscription = this.dashboardService.getCategories().subscribe(
       (res) => {
         console.log('categories', res);
         this.categories = res;
+        this.loading = false;
       },
       (error) => {
         console.log('error', error);
+        this.loading = false;
       }
     );
   }

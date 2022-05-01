@@ -1,6 +1,8 @@
 <app-header></app-header>
 <app-category-list
+  *ngIf="!loading"
   [categories]="categories"
   (outputForCategory)="handleCategory($event)"
 ></app-category-list>
+<app-category-loading *ngIf="loading"></app-category-loading>
 <app-footer></app-footer>

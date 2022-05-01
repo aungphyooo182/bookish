@@ -9,7 +9,13 @@ import { CategoryMapper } from './mappers/category.mapper';
 import { DashboardService } from './service/dashboard.service';
 import { CategoryListComponent } from './components/category-list/category-list.component';
 import { CategoryComponent } from './components/category/category.component';
-const components = [CategoryListComponent, CategoryComponent];
+import { CategoryLoadingComponent } from './components/category-loading/category-loading.component';
+import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
+const components = [
+  CategoryListComponent,
+  CategoryComponent,
+  CategoryLoadingComponent,
+];
 @NgModule({
   declarations: [DashboardComponent, components],
   imports: [
@@ -17,6 +23,7 @@ const components = [CategoryListComponent, CategoryComponent];
     DashboardRoutingModule,
     GlobalComponentsModule,
     HttpClientModule,
+    NgxShimmerLoadingModule,
   ],
   providers: [CategoryMapper, DashboardService],
 })
