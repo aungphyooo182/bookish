@@ -10,6 +10,7 @@ import { DashboardService } from './dashboard/service/dashboard.service';
 import { ButtonComponent } from './global-components/button/button.component';
 import { AuthService } from './lib/auth.service';
 import { CoreInterceptor } from './lib/core.interceptor';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { CoreInterceptor } from './lib/core.interceptor';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FontAwesomeModule,
   ],
   providers: [
     {
