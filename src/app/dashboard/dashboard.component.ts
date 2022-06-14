@@ -5,6 +5,10 @@ import { AuthService } from '../lib/auth.service';
 import { Category } from '../models/category';
 import { DashboardService } from './service/dashboard.service';
 
+
+
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -16,14 +20,21 @@ export class DashboardComponent implements OnInit {
     private router: Router,
     private dashboardService: DashboardService
   ) {}
+
+  public Pic1 = '../../assets/images/row-1-column-1.png';
+  public Pic2 = '../../assets/images/row-1-column-2.png';
+  public Pic3 = '../../assets/images/row-1-column-3.png';
+  public Pic4 = '../../assets/images/row-1-column-4.png';
+  public Pic5 = '../../assets/images/row-1-column-5.png';
+
   public _subscription: Subscription = new Subscription();
   public categories: Category[] = [];
   public imageList = [
-    '../../assets/images/row-1-column-1.png',
-    '../../assets/images/row-1-column-2.png',
-    '../../assets/images/row-1-column-3.png',
-    '../../assets/images/row-1-column-4.png',
-    '../../assets/images/row-1-column-5.png',
+    this.Pic1,
+    this.Pic2,
+    this.Pic3,
+    this.Pic4,
+    this.Pic5,
   ];
   public loading = false;
 
