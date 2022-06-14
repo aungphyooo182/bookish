@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-s0 sticky-top">
-  <a class="navbar-brand px-4" href="/dashboard">Bookish</a>
+  <a class="navbar-brand px-4" [routerLink]="['/dashboard']">Bookish</a>
   <button
     class="navbar-toggler mx-4"
     type="button"
@@ -13,7 +13,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/dashboard">Home </a>
+      <a class="nav-item nav-link active" [routerLink]="['/dashboard']">Home </a>
     </div>
   </div>
 </nav>

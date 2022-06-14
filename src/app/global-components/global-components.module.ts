@@ -5,6 +5,7 @@ import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { DisclaimerComponent } from "./disclaimer/disclaimer.component";
 import { CarouselComponent } from "./carousel/carousel.component";
+import { RouterModule } from "@angular/router";
 
 const components = [
   ButtonComponent,
@@ -16,7 +17,7 @@ const components = [
 
 @NgModule({
   declarations: [components],
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   exports: [components],
 })
 export class GlobalComponentsModule {}
