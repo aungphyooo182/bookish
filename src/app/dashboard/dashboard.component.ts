@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { AuthService } from '../lib/auth.service';
 import { Category } from '../models/category';
 import { DashboardService } from './service/dashboard.service';
@@ -21,11 +22,11 @@ export class DashboardComponent implements OnInit {
     private dashboardService: DashboardService
   ) {}
 
-  public Pic1 = '../../assets/images/row-1-column-1.png';
-  public Pic2 = '../../assets/images/row-1-column-2.png';
-  public Pic3 = '../../assets/images/row-1-column-3.png';
-  public Pic4 = '../../assets/images/row-1-column-4.png';
-  public Pic5 = '../../assets/images/row-1-column-5.png';
+  public Pic1 = environment.Pic1;
+  public Pic2 = environment.Pic2;
+  public Pic3 = environment.Pic3;
+  public Pic4 = environment.Pic4;
+  public Pic5 = environment.Pic5;
 
   public _subscription: Subscription = new Subscription();
   public categories: Category[] = [];
