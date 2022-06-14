@@ -1,0 +1,8 @@
+.carousel-item{
+  transition: transform 1s ease-in-out;
+}
+
+.carousel-item.active{
+  transition: transform 1s ease-in-out;
+}
+
